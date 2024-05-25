@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var minText : TextView
     private lateinit var maxText : TextView
     private lateinit var avgText : TextView
+    private lateinit var timerText : TextView
 
     var min = Int.MAX_VALUE
     var max = Int.MIN_VALUE
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         minText = findViewById(R.id.minText)
         maxText = findViewById(R.id.maxText)
         avgText = findViewById(R.id.avgText)
+        timerText = findViewById(R.id.timer)
 
         correctBtn = findViewById(R.id.correctBtn)
         correctBtn.setOnClickListener {
@@ -135,6 +137,7 @@ class MainActivity : AppCompatActivity() {
 
         minText.text = min.toString()
         maxText.text = max.toString()
+        timerText.text = seconds.toString()
         avgText.text = String.format("%.2f", avgSummary.toDouble() / (correctAns + incorrectAns))
     }
 
@@ -156,22 +159,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun calculateAnswer() : Double {
+    fun calculateAnswer() : Int {
         when (operator.text){
             "+" -> {
-                return operand1.text.toString().toDouble() + operand2.text.toString().toDouble()
+                return operand1.text.toString().toInt() + operand2.text.toString().toInt()
             }
             "-" -> {
-                return operand1.text.toString().toDouble() - operand2.text.toString().toDouble()
+                return operand1.text.toString().toInt() - operand2.text.toString().toInt()
             }
             "*" -> {
-                return operand1.text.toString().toDouble() * operand2.text.toString().toDouble()
+                return operand1.text.toString().toInt() * operand2.text.toString().toInt()
             }
             "/" -> {
-                return operand1.text.toString().toDouble() / operand2.text.toString().toDouble()
+                return operand1.text.toString().toInt() / operand2.text.toString().toInt()
             }
         }
-        return 0.0
+        return 0
     }
 
     fun updateCounters() {
