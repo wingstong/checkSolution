@@ -38,29 +38,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        totalQuestions = findViewById(R.id.textView1)
-        correctAnswers = findViewById(R.id.textView4)
-        incorrectAnswers = findViewById(R.id.textView5)
-        score = findViewById(R.id.textView6)
-        operand1 = findViewById(R.id.textView7)
-        operand2 = findViewById(R.id.textView9)
-        operator = findViewById(R.id.textView8)
-        answer = findViewById(R.id.editTextText)
-        minText = findViewById(R.id.textView30)
-        maxText = findViewById(R.id.textView31)
-        avgText = findViewById(R.id.textView32)
+        totalQuestions = findViewById(R.id.totalQuestions)
+        correctAnswers = findViewById(R.id.correctAnswers)
+        incorrectAnswers = findViewById(R.id.incorrectAnswers)
+        score = findViewById(R.id.score)
+        operand1 = findViewById(R.id.operand1)
+        operand2 = findViewById(R.id.operand2)
+        operator = findViewById(R.id.operator)
+        answer = findViewById(R.id.answer)
+        minText = findViewById(R.id.minText)
+        maxText = findViewById(R.id.maxText)
+        avgText = findViewById(R.id.avgText)
 
-        correctBtn = findViewById<Button>(R.id.button1)
+        correctBtn = findViewById(R.id.correctBtn)
         correctBtn.setOnClickListener {
             validateAnswer()
         }
 
-        incorrectBtn = findViewById<Button>(R.id.button2)
+        incorrectBtn = findViewById<Button>(R.id.incorrectBtn)
         incorrectBtn.setOnClickListener {
             invalidateAnswer()
         }
 
-        start = findViewById<Button>(R.id.button)
+        start = findViewById(R.id.button)
         start.setOnClickListener {
             generateNewQuestion()
         }
